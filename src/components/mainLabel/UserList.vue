@@ -27,13 +27,17 @@
                   </v-layout>
                 </v-container>
               </v-card>
-              <v-layout justify-center> 
+
+
+              <pagination :pages="page" :totalCnt="totalPageCnt" :visibled="visible" @setPaging="setPaging"/>
+              <!-- <v-layout justify-center> 
                 <v-pagination
                 v-model="page"
                 :length="totalPageCnt"
                 :total-visible="visible"
               ></v-pagination>
-              </v-layout>
+              </v-layout> -->
+
             </v-flex>
           </v-layout>
         </v-app>
@@ -44,6 +48,7 @@
 
 <script>
 import userItem from '@/components/mainLabel/userList.js'
+import Pagination from '@/components/mainLabel/Pagination'
 
 export default {
   name: 'userList',
@@ -54,7 +59,7 @@ export default {
     page: 1,
     size: 'sm',
     items: userItem,
-    gridListCnt: 9
+    gridListCnt: 9,
   }),
   mounted() {
     if (this.pages) {
@@ -71,9 +76,19 @@ export default {
     }
   },
   methods: {
+    setPaging(pagingObj) {
+      console.log('>> pagingObj : ', pagingObj);
+      this.page = pagingObj.page
+      this.totalPageCnt = pagingObj.totalPageCnt
+      this.visible = pagingObj.visibled
+      console.log(`page : ${this.page}, totalPageCnt : ${this.totalPageCnt}, visible : ${this.visible}`)
+    }
   },
   computed: {
   },
+  components: {
+    Pagination
+  }
   // props: {
   //   page: {
   //     type: Boolean,

@@ -11,9 +11,9 @@ const sideBarItems = [
       { icon: 'contacts', text: '사용자 목록', pageId: 'userList' },
       // inner depth 2 동작 안됨 원인 찾기
       {
-        icon: 'keyboard_arrow_up',
-              'icon-alt': 'keyboard_arrow_down',
-        text: 'Inner Label_1',
+        icon: 'assignment',
+        text: '2뎁스 메뉴',
+        pageId: 'menu2depth'
         // model: true,
         // children: [
         //   { icon: 'add', text: 'Inner Label_2' },

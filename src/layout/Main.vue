@@ -2,7 +2,7 @@
   <v-content>
     <v-container fluid fill-height>
       <v-layout justify-center align-center>
-        빈 공간
+        Main.vue 빈공간
       </v-layout>
     </v-container>
   </v-content>
